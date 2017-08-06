@@ -61,6 +61,21 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+    //Array of images which you want to show: Use path you want.
+    var images=new Array('img/photo1.jpg','img/photo2.jpg','img/photo3.jpg');
+    var nextimage=0;
+    doSlideshow();
+
+    function doSlideshow(){
+        if(nextimage>=images.length){nextimage=0;}
+        $('.header')
+        .css('background','url("'+images[nextimage++]+'") no-repeat center')
+        .fadeIn(8000,function(){
+            setTimeout(doSlideshow,4000);
+        });
+    }
+    </script>
 
 </body>
 
